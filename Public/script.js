@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startExperienceButton) {
         startExperienceButton.addEventListener('click', () => {
             if (welcomeModal) welcomeModal.classList.remove('visible');
-            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza. Disfruta toda la información y te esperamos dentro de nuestro curso.");
+            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza. Esperamos que disfrutes toda la información e interacción en esta página, te esperamos dentro de nuestro curso.");
         });
     }
 
@@ -666,4 +666,5 @@ document.addEventListener('DOMContentLoaded', () => {
         codeObserver.observe(codeSimulationContainer);
     }
 });
+
 
