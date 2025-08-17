@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!whatsappWidget) return;
         whatsappWidget.classList.add('open');
         showTypingAndReply();
-        speak("Te invitamos a que te inscribas. Dale en el botón Iniciar Chat para comunicarte con nosotros.");
+        speak("Te invitamos a que te inscribas a este increible curso de programación desde 0. Dale clic en el boton verde que dice Iniciar Chat para comunicarte con nuestra asesora oficial.");
     }
 
     function closeWhatsApp() {
@@ -666,6 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         codeObserver.observe(codeSimulationContainer);
     }
 });
+
 
 
 
