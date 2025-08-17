@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startExperienceButton) {
         startExperienceButton.addEventListener('click', () => {
             if (welcomeModal) welcomeModal.classList.remove('visible');
-            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza. Esperamos que disfrutes toda la información e interacción en esta página. Querido usuario, te recuerdamos que ya abrimos las inscripciones de nuestro curso de programación, puedes inscribirte dandole clic al boton de whatsapp de la esquina inferior derecha.");
+            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza. Esperamos que disfrutes toda la información e interacción en esta página. Querido usuario, te recordamos que ya abrimos las inscripciones de nuestro curso de programación, puedes inscribirte dandole clic al boton de whatsapp de la esquina inferior derecha.");
         });
     }
 
@@ -666,6 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
         codeObserver.observe(codeSimulationContainer);
     }
 });
+
 
 
 
