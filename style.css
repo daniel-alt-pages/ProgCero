@@ -76,25 +76,44 @@ body {
     background-color: var(--bg-color);
     color: var(--text-secondary);
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Previene el desbordamiento horizontal */
+    overflow-x: hidden;
+    /* Previene el desbordamiento horizontal */
 }
 
-h1, h2, h3, a.nav-link, button.nav-button, h4.footer-title {
+h1,
+h2,
+h3,
+a.nav-link,
+button.nav-button,
+h4.footer-title {
     color: var(--text-primary);
 }
 
-header, main, footer {
+header,
+main,
+footer {
     position: relative;
     z-index: 2;
 }
+
+/* MEJORA DE ACCESIBILIDAD: Añade un indicador de foco visible para la navegación con teclado */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+}
+
 
 /* ==========================================================================
    HEADER Y NAVEGACIÓN
    ========================================================================== */
 header {
     background-color: var(--header-bg);
-    backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo del header */
-    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque para el fondo del header */
+    -webkit-backdrop-filter: blur(10px);
+    /* Soporte para Safari */
 }
 
 #main-header {
@@ -218,7 +237,8 @@ body.scrolled #main-header {
     border-radius: 1rem;
     padding: 1px;
     background: transparent;
-    will-change: transform, opacity; /* Optimización de rendimiento */
+    will-change: transform, opacity;
+    /* Optimización de rendimiento */
 }
 
 .card::before {
@@ -253,6 +273,7 @@ body.scrolled #main-header {
 }
 
 @media (hover: hover) {
+
     .card:hover::before,
     .card:hover::after {
         opacity: 1;
@@ -284,8 +305,13 @@ body.scrolled #main-header {
 }
 
 @keyframes rotate {
-    from { --angle: 0deg; }
-    to { --angle: 360deg; }
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
 }
 
 /* ==========================================================================
@@ -307,12 +333,29 @@ footer {
 }
 
 /* Estilos para el resaltado de sintaxis en la simulación de código */
-.code-keyword { color: #569cd6; }
-.code-function { color: #dcdcaa; }
-.code-string { color: #ce9178; }
-.code-comment { color: #6a9955; }
-.code-punctuation { color: #d4d4d4; }
-.code-parameter { color: #9cdcfe; }
+.code-keyword {
+    color: #569cd6;
+}
+
+.code-function {
+    color: #dcdcaa;
+}
+
+.code-string {
+    color: #ce9178;
+}
+
+.code-comment {
+    color: #6a9955;
+}
+
+.code-punctuation {
+    color: #d4d4d4;
+}
+
+.code-parameter {
+    color: #9cdcfe;
+}
 
 .logo-prog {
     color: var(--logo-prog-color);
@@ -323,7 +366,8 @@ footer {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Scroll suave en iOS */
     scrollbar-width: none;
     scroll-behavior: smooth;
 }
@@ -381,7 +425,8 @@ footer {
 .logo-slider-track {
     display: flex;
     animation: scroll 40s linear infinite;
-    width: calc(150px * 20); /* Ancho total para la animación de bucle */
+    width: calc(150px * 20);
+    /* Ancho total para la animación de bucle */
 }
 
 .logo-slider-track:hover {
@@ -400,7 +445,8 @@ footer {
     font-size: 2rem;
     color: var(--slider-icon-color);
     transition: transform 0.3s ease, color 0.3s ease;
-    will-change: transform; /* Optimización */
+    will-change: transform;
+    /* Optimización */
 }
 
 .logo-slide:hover i {
@@ -409,8 +455,13 @@ footer {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-150px * 10)); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-150px * 10));
+    }
 }
 
 /* Estilos de la sección de detalles y tutor */
@@ -433,10 +484,21 @@ footer {
     transition: filter 0.3s ease;
 }
 
-.logo-scopegenius { filter: invert(1); }
-.dark .logo-scopegenius { filter: none; }
-.dark .logo-digiart { filter: brightness(0) invert(1); }
-.dark .tutor-photo { filter: brightness(.9) contrast(0.95); }
+.logo-scopegenius {
+    filter: invert(1);
+}
+
+.dark .logo-scopegenius {
+    filter: none;
+}
+
+.dark .logo-digiart {
+    filter: brightness(0) invert(1);
+}
+
+.dark .tutor-photo {
+    filter: brightness(.9) contrast(0.95);
+}
 
 /* Títulos con efecto de escritura */
 #typing-title,
@@ -457,12 +519,21 @@ footer {
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    will-change: transform, opacity; /* Optimización */
+    will-change: transform, opacity;
+    /* Optimización */
 }
 
-.animate-on-scroll.slide-in-up { transform: translateY(30px); }
-.animate-on-scroll.slide-in-left { transform: translateX(-30px); }
-.animate-on-scroll.slide-in-right { transform: translateX(30px); }
+.animate-on-scroll.slide-in-up {
+    transform: translateY(30px);
+}
+
+.animate-on-scroll.slide-in-left {
+    transform: translateX(-30px);
+}
+
+.animate-on-scroll.slide-in-right {
+    transform: translateX(30px);
+}
 
 .animate-on-scroll.is-visible {
     opacity: 1;
@@ -473,15 +544,32 @@ footer {
    WIDGET DE WHATSAPP
    ========================================================================== */
 #whatsapp-card {
-    --c1: #25D366;
-    --c2: #128C7E;
     border-radius: 9999px;
     padding: 0;
 }
 
+/* Se eliminan los pseudo-elementos que crean el borde brillante */
+#whatsapp-card::before,
 #whatsapp-card::after {
-    inset: -4px;
+    display: none;
 }
+
+#whatsapp-card .card-content {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Filtro de brillo neón aplicado a la imagen del botón */
+#whatsapp-button img {
+    transition: filter 0.3s ease;
+    filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.7)) drop-shadow(0 0 12px rgba(57, 255, 20, 0.5));
+}
+
+/* Se intensifica el brillo al pasar el mouse sobre el botón */
+#whatsapp-button:hover img {
+    filter: drop-shadow(0 0 6px rgba(57, 255, 20, 1)) drop-shadow(0 0 20px rgba(57, 255, 20, 0.7));
+}
+
 
 #whatsapp-button {
     transition: transform 0.3s ease;
@@ -500,17 +588,51 @@ footer {
     pointer-events: none;
 }
 
+/* === INICIO DE LA CORRECCIÓN === */
+/* 1. Hacemos que el contenedor principal ignore los eventos de clic por defecto.
+      Esto evita que el espacio ocupado por la ventana de chat oculta bloquee la página. */
+#whatsapp-chat-widget {
+    pointer-events: none;
+}
+
+/* 2. Cuando el widget se abre (tiene la clase 'open'), reactivamos los eventos
+      para que se pueda interactuar con la ventana de chat. */
+#whatsapp-chat-widget.open {
+    pointer-events: auto;
+}
+
+/* 3. ¡MUY IMPORTANTE! Hacemos que el botón circular de WhatsApp SIEMPRE sea clickable,
+      incluso cuando su contenedor principal los está ignorando. */
+#whatsapp-card {
+    pointer-events: auto;
+}
+
+/* === FIN DE LA CORRECCIÓN === */
+
 @keyframes typing-dot {
-    0%, 60%, 100% { transform: translateY(0); }
-    30% { transform: translateY(-3px); }
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-3px);
+    }
 }
 
 #typing-indicator span {
     animation: typing-dot 1.2s infinite ease-in-out;
 }
 
-#typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-#typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+#typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 .whatsapp-bg {
     background-image: url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg');
@@ -530,7 +652,9 @@ footer {
     border-top-left-radius: 0;
 }
 
-.dark .chat-bubble.incoming { background-color: #2a2a2a; }
+.dark .chat-bubble.incoming {
+    background-color: #2a2a2a;
+}
 
 .chat-bubble.outgoing {
     background-color: #dcf8c6;
@@ -551,8 +675,15 @@ footer {
 }
 
 @keyframes blink {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: white;
+    }
 }
 
 #code-output {
@@ -646,10 +777,13 @@ footer {
     transform: scale(1.1);
 }
 
+/* CORRECCIÓN: Se unifican los estilos de posicionamiento para todos los tamaños de pantalla */
 #voice-controls-container {
     position: fixed;
-    top: 5rem;
-    right: 1rem;
+    bottom: 6rem;
+    /* Ubicado encima del botón de WhatsApp */
+    right: 1.75rem;
+    /* Alineado con el botón de WhatsApp */
     z-index: 51;
     opacity: 0;
     transform: translateY(-20px);
@@ -731,44 +865,180 @@ body.scrolled #voice-controls-container {
 }
 
 /* ==========================================================================
-   OPTIMIZACIONES PARA MÓVILES (NUEVO)
+   ESTILOS PARA TOOLTIPS (MENSAJES EMERGENTES)
+   ========================================================================== */
+
+/* Contenedor del tooltip para que el posicionamiento absoluto funcione */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Estilo del mensaje emergente (caja de texto) */
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    /* Toma el texto del atributo HTML */
+    position: absolute;
+    bottom: -2.75rem;
+    /* Posición debajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    background-color: var(--text-primary);
+    /* Fondo oscuro/claro según el tema */
+    color: var(--card-bg-color);
+    /* Texto claro/oscuro según el tema */
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    /* Evita que el texto se divida en varias líneas */
+    z-index: 10;
+
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Estilo de la flecha del mensaje emergente */
+[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    /* Posición entre el botón y la caja de texto */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent var(--text-primary) transparent;
+    /* Crea un triángulo apuntando hacia arriba */
+    z-index: 10;
+
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Muestra el tooltip al pasar el cursor */
+/* Se desactiva en pantallas táctiles para evitar que se quede pegado */
+@media (hover: hover) {
+
+    [data-tooltip]:hover::before,
+    [data-tooltip]:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* CORRECCIÓN: Estilos específicos para los tooltips de los botones flotantes a la derecha */
+#scrolled-header [data-tooltip]::before,
+#voice-controls-container [data-tooltip]::before {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+#scrolled-header [data-tooltip]::after,
+#voice-controls-container [data-tooltip]::after {
+    left: auto;
+    right: 1.25rem;
+    /* Ajusta la posición de la flecha para que apunte al centro del botón */
+    transform: none;
+}
+
+
+/* ==========================================================================
+   OPTIMIZACIONES PARA MÓVILES
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* Aumenta el tamaño y espaciado de los botones flotantes */
     #whatsapp-chat-widget {
-        bottom: 1.5rem; /* 24px */
-        right: 1.5rem; /* 24px */
+        bottom: 1.5rem;
+        /* 24px */
+        right: 1.5rem;
+        /* 24px */
     }
 
     #whatsapp-button {
-        width: 4.5rem; /* 72px */
-        height: 4.5rem; /* 72px */
+        width: 4.5rem;
+        /* 72px */
+        height: 4.5rem;
+        /* 72px */
     }
 
     #voice-controls-container {
-        top: auto;
-        bottom: 7rem; /* Ubicado encima del botón de WhatsApp */
-        right: 1.5rem; /* 24px */
+        right: 2rem;
+        /* 32px (1.5rem del borde + 0.5rem de ajuste por diferencia de tamaño) */
     }
 
     #voice-settings-toggle {
-        width: 3.5rem; /* 56px */
-        height: 3.5rem; /* 56px */
+        width: 3.5rem;
+        /* 56px */
+        height: 3.5rem;
+        /* 56px */
     }
-    
+
     #scrolled-header {
-        top: 1.5rem; /* 24px */
-        right: 1.5rem; /* 24px */
+        top: 1.5rem;
+        /* 24px */
+        right: 1.5rem;
+        /* 24px */
     }
 
     #scrolled-header button {
-        width: 3.5rem; /* 56px */
-        height: 3.5rem; /* 56px */
+        width: 3.5rem;
+        /* 56px */
+        height: 3.5rem;
+        /* 56px */
     }
 
     /* Aumenta el área de toque para los botones de testimonios */
-    #prev-testimonial, #next-testimonial {
-        width: 3rem; /* 48px */
-        height: 3rem; /* 48px */
+    #prev-testimonial,
+    #next-testimonial {
+        width: 3rem;
+        /* 48px */
+        height: 3rem;
+        /* 48px */
     }
+}
+
+/* ==========================================================================
+   CORRECCIONES VISUALES DEL MÓDULO 7
+   ========================================================================== */
+
+/* 1. Evita el salto de página (CLS) al reservar espacio para la salida del código */
+#code-simulation-container {
+    min-height: 480px;
+    /* Altura suficiente para el editor y la lista de tareas */
+}
+
+/* 2. Mejora la visibilidad de la lista de tareas en modo oscuro */
+.dark #code-output {
+    background-color: var(--slider-bg-color);
+    /* Fondo más claro que el negro puro */
+    border-color: var(--slider-border-color);
+}
+
+.dark .task-item {
+    border-bottom-color: var(--slider-border-color);
+}
+
+.dark .task-checkbox {
+    border-color: var(--slider-border-color);
+}
+
+.dark .task-item.completed .task-checkbox {
+    background-color: rgba(56, 189, 248, 0.1);
+    /* Tono azul claro del tema oscuro */
+    border-color: rgba(56, 189, 248, 0.5);
+}
+
+.dark .task-item.completed .task-checkbox svg {
+    color: #38bdf8;
+    /* Color del icono del tema oscuro */
 }
