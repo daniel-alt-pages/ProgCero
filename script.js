@@ -2,22 +2,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // =========================================================================
-    // MÓDULO DE SEGURIDAD BÁSICA
+    // MÓDULO DE SEGURIDAD BÁSICA (ELIMINADO)
     // =========================================================================
-    // Nota: Estas medidas son disuasorias, no infalibles.
-    // Deshabilita el menú contextual (clic derecho) para dificultar la inspección.
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // Deshabilita atajos de teclado comunes para abrir las herramientas de desarrollador.
-    document.onkeydown = function (e) {
-        if (e.keyCode === 123 || // F12
-            (e.ctrlKey && e.shiftKey && e.keyCode === 'I'.charCodeAt(0)) || // Ctrl+Shift+I
-            (e.ctrlKey && e.shiftKey && e.keyCode === 'C'.charCodeAt(0)) || // Ctrl+Shift+C
-            (e.ctrlKey && e.shiftKey && e.keyCode === 'J'.charCodeAt(0)) || // Ctrl+Shift+J
-            (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))) { // Ctrl+U
-            return false;
-        }
-    }
+    // NOTA: Se ha eliminado el módulo de "seguridad" que bloqueaba el clic derecho 
+    // y los atajos de teclado. Estas medidas no son efectivas contra usuarios
+    // experimentados y perjudican la experiencia de desarrolladores y usuarios
+    // curiosos que desean aprender del código. Es una mejor práctica no incluirlas.
 
     // =========================================================================
     // MÓDULO DE NAVEGACIÓN (MENÚ MÓVIL Y HEADER)
@@ -411,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!whatsappWidget) return;
         whatsappWidget.classList.add('open');
         showTypingAndReply();
-        speak("Te invitamos a que te inscribas a este increible curso de programación desde 0. Dale clic en el botón verde que dice Iniciar Chat, para comunicarte con nuestra asesora oficial.");
+        speak("Te invitamos a que te inscribas. Dale en el botón Iniciar Chat para comunicarte con nosotros.");
     }
 
     function closeWhatsApp() {
@@ -517,7 +507,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (startExperienceButton) {
         startExperienceButton.addEventListener('click', () => {
             if (welcomeModal) welcomeModal.classList.remove('visible');
-            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza. Esperamos que disfrutes toda la información e interacción en esta página. Querido usuario, te recordamos que ya abrimos las inscripciones de nuestro curso de programación, puedes inscribirte dandole clic al boton de whatsapp de la esquina inferior derecha.");
+            speak("¡Hola, futuro colega! Te doy la bienvenida a ProgCero, la plataforma donde tu viaje para convertirte en un gran programador comienza ahora. Disfruta toda la información y te esperamos dentro de nuestro curso.");
         });
     }
 
@@ -666,10 +656,3 @@ document.addEventListener('DOMContentLoaded', () => {
         codeObserver.observe(codeSimulationContainer);
     }
 });
-
-
-
-
-
-
-
